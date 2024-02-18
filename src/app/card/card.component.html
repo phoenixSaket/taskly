@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="left">
+        <img *ngIf="category == 'DOCTOR'" src="assets/doctor.svg" alt="doctor">
+        <img *ngIf="category == 'BIRTHDAY'" src="assets/birthday.svg" alt="birthday">
+        <img *ngIf="category == 'NEW'" src="assets/new.svg" alt="new">
+        <img *ngIf="category == 'MEETING'" src="assets/meeting.svg" alt="meeting">
+        <img *ngIf="category == 'APPOINTMENT'" src="assets/meeting.svg" alt="appointment">
+        <img *ngIf="category == ''" src="assets/new.svg" alt="null">
+    </div>
+    <div class="right">
+        <div class="title">{{title}}</div>
+
+        <div class="details" *ngIf="date.length > 0 && time.length > 0 && type.length > 0 && !!description && description.length > 0">
+            <div class="sub-title date" *ngIf="date.length > 0">
+                {{date | date}}
+            </div>
+            <span *ngIf="date.length > 0">-</span>
+            <div class="time" *ngIf="time.length > 0">
+                {{time}}
+            </div>
+        </div>
+
+        <div class="type chip" *ngIf="type.length > 0">
+            {{type}}
+        </div>
+
+        <div class="description" *ngIf="!!description && description.length > 0">
+            {{description}}
+        </div>
+    </div>
+</div>

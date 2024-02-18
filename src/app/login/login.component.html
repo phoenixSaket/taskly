@@ -1,0 +1,10 @@
+<div class="login-container">
+    <div class="login-form">
+        <input type="text" (change)="inputChanged('username', $event)" name="username" placeholder="Username">
+        <input type="password" (change)="inputChanged('password', $event)" name="password" placeholder="Password">
+        <div class="buttons-container">
+            <button (click)="login()" class="login">Login</button>
+            <button class="create-new-account">Create New Account</button>
+        </div>
+    </div>
+</div>
