@@ -1,5 +1,8 @@
 <div class="container">
-    <div class="left">
+    <div class="left" [ngClass]="isSideOpen ? 'show' : 'hide'">
+        <div class="chevron-container" (click)="openSideBar()">
+            <img [ngClass]="isSideOpen ? 'show' : 'hide' " src="assets/previous.svg" alt="Close">
+        </div>
         <div class="logo-container">
             <img src="assets/logo.svg" alt="Taskly">
             <div class="brand-name">taskly</div>

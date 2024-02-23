@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class HomeComponent {
 
+  isSideOpen : boolean = true;
+
+  openSideBar() {
+    this.isSideOpen = !this.isSideOpen;
+  }
+
 }

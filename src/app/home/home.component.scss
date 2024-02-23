@@ -5,20 +5,90 @@
     max-width: 1440px;
 
     .left {
-        overflow: auto;
+        position: relative;
         display: flex;
         flex-direction: column;
         width: 100%;
         max-width: 400px;
         background-color: var(--side);
 
+        &.show {
+            width: 100%;
+            max-width: 400px;
+            transition: all ease-in var(--animation-speed);
+
+            .chevron-container {
+                background-color: var(--secondary);
+                transform: scale(80%);
+            }
+        }
+        
+        &.hide {
+            transition: all ease-in var(--animation-speed);
+            transition-delay: none;
+            
+            // width: 30px;
+            transform: translateX(calc(-100% + 30px));
+            background-color: var(--tertiary-bg);
+            
+            opacity: 0.9;
+            
+            .logo-container {
+                background-color: var(--tertiary-bg);
+            }
+            
+            .weekly {
+                .title {
+                    background-color: var(--tertiary-bg);
+                }
+            }
+            
+            .chevron-container {
+                background-color: var(--text-secondary);
+                border-radius: 8px;
+            }
+        }
+
         &::-webkit-scrollbar {
             display: none;
         }
-        -ms-overflow-style: none;  /* IE and Edge */
-        scrollbar-width: none;  /* Firefox */
+
+        -ms-overflow-style: none;
+        /* IE and Edge */
+        scrollbar-width: none;
+        /* Firefox */
+
+        .chevron-container {
+            position: absolute;
+            top: 28px;
+            right: -24px;
+            padding: 16px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            z-index: 200;
+            box-shadow: 0px 0px 12px var(--shadow);
+            transition: all ease-in-out var(--animation-speed);
+            cursor: pointer;
+            user-select: none;
+
+            img {
+                transition: all ease-in-out var(--animation-speed);
+                border-radius: 12px;
+                
+                &.show {
+                    transform: rotate(0deg) scale(120%);
+                }
+
+                &.hide {
+                    transform: rotate(180deg) scale(120%);
+                }
+            }
+        }
 
         .logo-container {
+            transition: all ease-in var(--animation-speed);
             display: flex;
             align-items: center;
             gap: 20px;
@@ -26,8 +96,10 @@
             top: 0;
             padding: 35px 35px;
             background-color: var(--side);
+            user-select: none;
 
             .brand-name {
+                transition: all ease-in var(--animation-speed);
                 font-size: 20px;
                 font-weight: 700;
                 color: var(--text);
@@ -35,11 +107,13 @@
         }
 
         .weekly {
+            transition: all ease-in var(--animation-speed);
             display: flex;
             flex-direction: column;
             gap: 20px;
 
             .title {
+                user-select: none;
                 display: flex;
                 flex-direction: row;
                 align-items: baseline;
@@ -48,12 +122,16 @@
                 top: 101.59px;
                 background-color: var(--side);
                 padding: 0 35px 10px;
+                transition: all ease-in var(--animation-speed);
 
                 .text {
+                    transition: all ease-in var(--animation-speed);
                     color: var(--text-secondary);
                 }
 
                 .view-all {
+                    transition: all ease-in var(--animation-speed);
+
                     font-size: 12px;
                     color: var(--primary);
                     text-decoration: underline;
@@ -62,10 +140,14 @@
             }
 
             .content {
+                transition: all ease-in var(--animation-speed);
+
                 display: flex;
                 flex-direction: column;
                 gap: 10px;
                 padding: 0 35px;
+                user-select: none;
+                cursor: pointer;
             }
         }
 
