@@ -1,0 +1,76 @@
+<div class="main-container">
+    <div class="show-calendar" [ngClass]="isCalendarShowing ? 'show' : 'hide'" (click)="showCalendar()">
+        {{isCalendarShowing ? 'Hide' : 'Show'}} Calendar
+        <img src="assets/next.svg" alt="open calendar">
+    </div>
+    <div class="calendar" [ngClass]="isCalendarShowing ? 'show' : 'hide'">
+        <div class="top-container">
+            <div class="heading">
+                <div class="month">{{month}}</div>
+                <div class="year">{{year}}</div>
+            </div>
+            <div class="clock">
+
+                <div class="digit tenhour">
+                    <span class="base"></span>
+                    <div class="flap over front"></div>
+                    <div class="flap over back"></div>
+                    <div class="flap under"></div>
+                </div>
+
+                <div class="digit hour">
+                    <span class="base"></span>
+                    <div class="flap over front"></div>
+                    <div class="flap over back"></div>
+                    <div class="flap under"></div>
+                </div>
+
+                <div class="digit tenmin">
+                    <span class="base"></span>
+                    <div class="flap over front"></div>
+                    <div class="flap over back"></div>
+                    <div class="flap under"></div>
+                </div>
+
+                <div class="digit min">
+                    <span class="base"></span>
+                    <div class="flap over front"></div>
+                    <div class="flap over back"></div>
+                    <div class="flap under"></div>
+                </div>
+
+                <!-- <div class="digit tensec">
+                <span class="base"></span>
+                <div class="flap over front"></div>
+                <div class="flap over back"></div>
+                <div class="flap under"></div>
+            </div>
+
+            <div class="digit sec">
+                <span class="base"></span>
+                <div class="flap over front"></div>
+                <div class="flap over back"></div>
+                <div class="flap under"></div>
+            </div> -->
+
+            </div>
+
+        </div>
+
+        <div class="line top bottom-line">
+            <div class="day">Sun</div>
+            <div class="day">Mon</div>
+            <div class="day">Tue</div>
+            <div class="day">Wed</div>
+            <div class="day">Thu</div>
+            <div class="day">Fri</div>
+            <div class="day">Sat</div>
+        </div>
+        <div class="line" *ngFor="let line of calender">
+            <div class="day" *ngFor="let day of line" [ngClass]="{previous : day.isPrevious, today: day.date == today}">
+                {{day.day == 0 ? '' :
+                day.date}}
+            </div>
+        </div>
+    </div>
+</div>

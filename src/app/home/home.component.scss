@@ -2,7 +2,7 @@
     width: 100dvw;
     display: flex;
     height: 100%;
-    max-width: 1440px;
+    overflow: hidden;
 
     .left {
         position: relative;
@@ -11,6 +11,18 @@
         width: 100%;
         max-width: 400px;
         background-color: var(--side);
+
+        img {
+            width: 16px;
+            height: 16px;
+        }
+
+        .calendar-container {
+            padding: 0 16px 16px;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
 
         &.show {
             width: 100%;

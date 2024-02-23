@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class LoginService {
-  public isUserLoggedIn: boolean = true;
+  public isUserLoggedIn: boolean = false;
   public user: User = {
     name: '',
     email: '',
