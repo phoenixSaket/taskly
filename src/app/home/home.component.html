@@ -22,10 +22,28 @@
         <div class="calendar-container">
             <app-calendar></app-calendar>
         </div>
-        
+
     </div>
-    <div class="center">
-        <div class="top"></div>
+    <div class="center" [ngClass]="isSideOpen ? '' : 'expanded'">
+        <div class="top">
+            <div class="container-inner">
+                <div class="first"><span class="bold">Today's</span> schedule</div>
+                <div class="second">
+                    <div class="date">
+                        <div class="day">
+                            {{today}}
+                            <span class="current-date">{{currentDate}}</span>
+                        </div>
+                    </div>
+                    <div class="chevron-container">
+                        <img src="assets/back.svg" [ngClass]="{'disabled' : isBackDisabled}" (click)="previousDay()" alt="previous">
+                        <img src="assets/front.svg" [ngClass]="{'disabled' : isNextDisabled}" (click)="nextDay()" alt="next">
+                    </div>
+                </div>
+            </div>
+
+            <img src="assets/logo.svg" alt="logo">
+        </div>
         <div class="center-left"></div>
         <div class="right"></div>
     </div>

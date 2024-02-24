@@ -126,6 +126,7 @@ $textColourDark: darken($textColour, 35%);
     // width: 100%;
     display: flex;
     justify-content: center;
+    align-items: center;
 
     .digit {
         margin-right: 2px;
@@ -137,6 +138,11 @@ $textColourDark: darken($textColour, 35%);
         &:last-child {
             margin-right: 0;
         }
+    }
+
+    .period {
+        color: var(--text);
+        font-size: 24px;
     }
 
 }

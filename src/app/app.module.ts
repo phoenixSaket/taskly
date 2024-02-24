@@ -8,7 +8,7 @@ import { HomeComponent } from './home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { LoaderComponent } from './loader/loader.component';
 import { CardComponent } from './card/card.component';
-import { CalenderComponent } from './calender/calendar.component';
+import { CalenderComponent } from './calendar/calendar.component';
 
 @NgModule({
   declarations: [

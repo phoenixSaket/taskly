@@ -32,19 +32,17 @@
             .chevron-container {
                 background-color: var(--secondary);
                 transform: scale(80%);
+                visibility: visible;
             }
         }
         
         &.hide {
-            transition: all ease-in var(--animation-speed);
-            transition-delay: none;
-            
-            // width: 30px;
+            transition: all ease-in-out var(--animation-speed);
+            transition-delay: none;            
             transform: translateX(calc(-100% + 30px));
-            background-color: var(--tertiary-bg);
-            
+            background-color: var(--tertiary-bg);            
             opacity: 0.9;
-            
+
             .logo-container {
                 background-color: var(--tertiary-bg);
             }
@@ -87,7 +85,7 @@
 
             img {
                 transition: all ease-in-out var(--animation-speed);
-                border-radius: 12px;
+                border-radius: 4px;
                 
                 &.show {
                     transform: rotate(0deg) scale(120%);
@@ -109,6 +107,11 @@
             padding: 35px 35px;
             background-color: var(--side);
             user-select: none;
+
+            img {
+                width: 35px;
+                height: 35px;
+            }
 
             .brand-name {
                 transition: all ease-in var(--animation-speed);
@@ -163,5 +166,122 @@
             }
         }
 
+    }
+
+    .center {
+        width: 100%;
+        justify-content: space-between;
+        display: flex;
+        transition-duration: var(--animation-speed);
+        max-width: 600px;
+        margin: 35px 80px;
+        &.expanded {
+            max-width: 1000px;
+            transform: translateX(-330px);
+        }
+        
+        .top {
+            padding: 0px;
+            display: flex;
+            gap: 40px;
+            min-width: 400px;
+            height: max-content;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+
+            img {
+                width: 55px;
+                height: 55px;
+            }
+
+            .container-inner {
+                display: flex;
+                flex-direction: column;
+            }
+            .first {
+                font-size: 40px;
+                .bold {
+                    font-weight: 700;
+                }
+            }
+
+            .second {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                .date {
+                    font-size: 28px;
+                    color: var(--dark-primary);
+                }
+
+                .chevron-container {
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+
+                    img {
+                        width: 24px;
+                        height: 24px;
+                        cursor: pointer;
+                        border-radius: 50%;
+                        box-shadow: 0px 0px 12px var(--shadow);
+                        user-select: none;
+
+                        &.disabled {
+                            pointer-events: none;
+                            opacity: 0.2;
+                            cursor: not-allowed;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+}
+
+@media screen and (max-width: 500px) {
+    .container {
+        .left {
+            min-width: 90%;
+
+            .hide {
+                min-width: 10px;
+                width: 0;
+                // display: none;
+            }
+
+            &.hide {
+                .chevron-container  {
+                    transform: scale(80%) translateY(-15px);
+                }
+            }
+        }
+
+        .center {
+            &.expanded {
+                // transform: translate(-50%);
+                margin: 65px 0;
+
+                .top {
+                    min-width: calc(100vw - 50px);
+                    .container-inner {
+                        width: 70%;
+
+                        .first {
+                            font-size: 24px;
+                        }
+
+                        .second {
+                            .date {
+                                // font: ;
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }
